@@ -11,7 +11,10 @@ var tenAM = localStorage.getItem("10am")
 var elevenAM = localStorage.getItem("11am")
 var twelvePM = localStorage.getItem("12pm")
 var onePM = localStorage.getItem("1pm")
-console.log(nineAM)
+var twoPM = localStorage.getItem("2pm")
+var threePM = localStorage.getItem("3pm")
+var fourPM = localStorage.getItem("4pm")
+var fivePM = localStorage.getItem("5pm")
 
 $(".btn").on("click", function() {
   // get the parent's id attribute
@@ -30,6 +33,11 @@ $(".btn").on("click", function() {
   var pullTask = function () {
     pulledTask = localStorage.getItem(parent,textIWant)
   }
+
+//reload page every 5 minutes to ensure colors changing
+var CurrentTime = moment().format("H");
+console.log(CurrentTime)
+
 
 //switching classes
 // var currentHour = 2
