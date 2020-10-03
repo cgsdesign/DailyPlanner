@@ -5,26 +5,32 @@
 // add class to date
         // if current time hour < make grey
         //if current time hour = make orange
-        //if future time hour > make green
-
-
+        //if future time hour > make green... use their colors... cry
+var nineAM = localStorage.getItem("9am")
+var tenAM = localStorage.getItem("10am")
+var elevenAM = localStorage.getItem("11am")
+var twelvePM = localStorage.getItem("12pm")
+var onePM = localStorage.getItem("1pm")
+console.log(nineAM)
 
 $(".btn").on("click", function() {
-
   // get the parent's id attribute
     var parent = $(this).closest('div').attr('id')
-    console.log(parent)
 
+  //Get text I want from text field
     textIWant = $(this).siblings("#text").val()
-    console.log(textIWant)
-    
+
+  //save
   var saveTask = function () {
-    localStorage.setItem(parent, textIWant)
+    localStorage.setItem(parent, textIWant)   
   }
-saveTask()
+    saveTask()
   });
 
-  console.log ("hooked up!")
+  var pullTask = function () {
+    pulledTask = localStorage.getItem(parent,textIWant)
+  }
+
 //switching classes
 // var currentHour = 2
 // var timeBar = 4
