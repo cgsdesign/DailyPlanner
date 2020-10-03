@@ -15,25 +15,15 @@ $(".btn").on("click", function() {
     var parent = $(this).closest('div').attr('id')
     console.log(parent)
 
-    textIWant = $( "parent > #text" ).value
+    textIWant = $(this).siblings("#text").val()
     console.log(textIWant)
-
-    var saveTasks = function() {
-      localStorage.setItem("tasks", JSON.stringify(textIWant));
-    };
-    saveTasks()
-    console.log($(parent).children("textarea"))
-    //   console.log(status.attr + "buton 9am clicked")
-    //tasks[status][index].text = text;//track item by parent's id, and index to replace text
-    //saveTasks();//update local storage
-  
-    // recreate p element
-    //var taskP = $("<p>")
-    //  .text(text);
-  
-    // replace textarea with p element
-    //  $(this).replaceWith(taskP);
+    
+  var saveTask = function () {
+    localStorage.setItem(parent, textIWant)
+  }
+saveTask()
   });
+
   console.log ("hooked up!")
 //switching classes
 // var currentHour = 2
