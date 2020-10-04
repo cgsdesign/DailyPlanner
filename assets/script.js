@@ -20,7 +20,8 @@ var fivePM = localStorage.getItem("5pm")
 
 //on load: 
 var onLoad = function () {
-
+//cound have writen the following section as :
+//$( "#9am #text").html(localStorage.getItem("9am"));
       $( "#9am" ).children("#text").html( nineAM );
       $( "#10am" ).children("#text").html( tenAM );
       $( "#11am" ).children("#text").html( elevenAM );
@@ -48,7 +49,8 @@ $(".btn").on("click", function() {
   });
   
 
-//get time (standard for records)  
+//get time in military hours by themselves. 
+//Note this is a STRING and in the format ##:  
 //CurrentTime = moment().format("H");
 
 
@@ -60,12 +62,11 @@ function updateClock() {
 $( function() {
   for (i=0;i < TimeID.length; i++) {
     CurrentTime = moment().format("H");//check tomorrow if needed
+    console.log(typeof CurrentTime)//lets me know if number or string
     console.log(CurrentTime)
-
 
     if (hourCompCount[i] == CurrentTime){
       //console.log(TimeID[i] + hourCompCount[i] +"present")
-      //ask ta if need == not === becaue one is a number and one is a string
     $( TimeID[i] ).switchClass( "future", "present", 1000 );
     $( TimeID[i] ).switchClass( "past", "present", 1000 );
 
