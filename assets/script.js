@@ -71,11 +71,30 @@ var TimeID = ["#9am", "#10am", "#11am", "#12pm", "#1pm", "#2pm", "#3pm", "#4pm",
 var hourCompCount= [9, 10, 11, 12, 13, 14, 15, 16, 17];
 $( function() {
   for (i=0;i < TimeID.length; i++) {
-    if (hourCompCount[i] === 12){
-    $( TimeID[i] ).switchClass( "future", "past", 1000 );
-  };
+    CurrentTime = moment().format("H");
+    console.log(CurrentTime)
 
-}
+    if (hourCompCount[i] === CurrentTime){
+      console.log(TimeID[i] + hourCompCount[i] +"present")
+    $( TimeID[i] ).switchClass( "future", "present", 1000 );
+    $( TimeID[i] ).switchClass( "past", "present", 1000 );
+
+    }
+
+    else if (hourCompCount[i] < CurrentTime){
+      console.log(TimeID[i] + hourCompCount[i] +"past")
+      $( TimeID[i] ).switchClass( "present", "past", 1000 );
+      $( TimeID[i] ).switchClass( "future", "past", 1000 );
+
+    }
+
+    else{
+      console.log(TimeID[i] + hourCompCount[i] +"future")
+      $( TimeID[i] ).switchClass( "present", "future", 1000 );
+      $( TimeID[i] ).switchClass( "past", "future", 1000 );
+
+    }
+  };
 } );
 
 
