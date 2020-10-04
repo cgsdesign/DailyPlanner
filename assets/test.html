@@ -1,27 +1,38 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Effects - switchClass Demo</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <style>
+  .toggler { width: 500px; height: 200px; position: relative; }
+  #button { padding: .5em 1em; text-decoration: none; }
+  #effect { position: relative; }
+  .newClass { width: 240px;  padding: 1em; letter-spacing: 0; margin: 0; }
+  .anotherNewClass { text-indent: 40px; letter-spacing: .2em; width: 410px; height: 100px; padding: 30px; margin: 10px; font-size: 1.1em; }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+      var TimeID = ["#9am","#10am"]
+  $( function() {
+    $( "#button" ).on( "click", function() {
+      $( TimeID[0] ).switchClass( "newClass", "anotherNewClass", 1000 );
+    });
+  } );
+  </script>
+</head>
 <body>
-
-<h2>JavaScript Arrays</h2>
-<p id="demo">
-<p id="demo2"></p>
-</p>
-<p id="not-correct">
-<p id="demo2"></p>
-</p>
-<script>
-var test = ["demo","demo2"]
-var cars = ['"Saab", "Volvo"', "BMW"];
-var test2 = function(){
-    
-  for (let index = 0; index < test.length; index++) {
-      console.log(test[index])
-      document.getElementById(test[index],"demo2").innerHTML = cars;
-
-  }  
-}
-test2()
-</script>
-
+ 
+<div class="toggler">
+  <div id="9am" class="newClass ui-corner-all">
+      Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede.
+  </div>
+</div>
+<button id="button" class="ui-state-default ui-corner-all">Run Effect</button>
+ 
+ 
 </body>
 </html>

@@ -60,17 +60,29 @@ function updateClock() {
 setInterval(updateClock, 300000);
 
 
+//testing zone
+function updateColors(){
+$( "#5pm" ).switchClass( "future", "past", 1000 )
+//       $( ".future" ).switchClass( "future", "present", 1000 )
+}
+//$( "#5pm" ).children("#text").html( fivePM );
 
+var TimeID = ["#9am","#10am"]
+$( function() {
+  $( "#button" ).on( "click", function() {
+    $( TimeID[0] ).switchClass( "newClass", "anotherNewClass", 1000 );
+  });
+} );
 
-
+//var TimeID = ["#9am", "#10am", "#11am", "#12pm", "#1pm", "#2pm", "#3pm", "#4pm", "#5pm"]
 //switching classes
 // var currentHour = 2
 // var timeBar = 4
 // var switchTimeClass = function(){
 //     if (currentTime =< ) {
-//       $( ".future" ).switchClass( "future", "present", 1000 )
+//       $( ".present" ).switchClass( "present", "future", 1000 )
 //     }
-//     else if (time === currentHour) {
+//     else if (time === currentTime) {
 //       $( ".present" ).switchClass( "present", "past", 1000 );
 //     }
 //     else () {
