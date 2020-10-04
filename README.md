@@ -1,7 +1,7 @@
 # DailyPlanner
 ### Live site at [DailyPlanner](https://cgsdesign.github.io/DailyPlanner/)
 ​
-For this project I created a daily planner with editable hourly time slots that can be saved to local storage. The page utilizes Minute-JS, jQuery, JQuery-UI and Bootstrap as well as vanilla JS, CSS, and of course HTML. 
+For this project I created a daily planner with editable hourly time slots that can be saved to local storage. The page utilizes Minute-JS, jQuery, jQuery-UI and Bootstrap as well as vanilla JS, CSS, and HTML. 
 ​
 ## Key Features
 * Rewritable hourly task blocks 
