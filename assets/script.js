@@ -67,14 +67,24 @@ $( "#5pm" ).switchClass( "future", "past", 1000 )
 }
 //$( "#5pm" ).children("#text").html( fivePM );
 
-var TimeID = ["#9am","#10am"]
+var TimeID = ["#9am", "#10am", "#11am", "#12pm", "#1pm", "#2pm", "#3pm", "#4pm", "#5pm"]
+var hourCompCount= [9, 10, 11, 12, 13, 14, 15, 16, 17];
 $( function() {
   for (i=0;i < TimeID.length; i++) {
+    if (hourCompCount[i] === 12){
     $( TimeID[i] ).switchClass( "future", "past", 1000 );
   };
+
+}
 } );
 
-//var TimeID = ["#9am", "#10am", "#11am", "#12pm", "#1pm", "#2pm", "#3pm", "#4pm", "#5pm"]
+
+
+
+TimeID.forEach((classLove, index) => {
+  const num2 = hourCompCount[index];
+  console.log(classLove, num2);
+});
 //switching classes
 // var currentHour = 2
 // var timeBar = 4
