@@ -69,9 +69,9 @@ $( "#5pm" ).switchClass( "future", "past", 1000 )
 
 var TimeID = ["#9am","#10am"]
 $( function() {
-  $( "#button" ).on( "click", function() {
-    $( TimeID[0] ).switchClass( "newClass", "anotherNewClass", 1000 );
-  });
+  for (i=0;i < TimeID.length; i++) {
+    $( TimeID[i] ).switchClass( "future", "past", 1000 );
+  };
 } );
 
 //var TimeID = ["#9am", "#10am", "#11am", "#12pm", "#1pm", "#2pm", "#3pm", "#4pm", "#5pm"]
