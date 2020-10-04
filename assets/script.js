@@ -6,6 +6,8 @@
         // if current time hour < make grey
         //if current time hour = make orange
         //if future time hour > make green... use their colors... cry
+
+//text for times
 var nineAM = localStorage.getItem("9am")
 var tenAM = localStorage.getItem("10am")
 var elevenAM = localStorage.getItem("11am")
@@ -16,15 +18,23 @@ var threePM = localStorage.getItem("3pm")
 var fourPM = localStorage.getItem("4pm")
 var fivePM = localStorage.getItem("5pm")
 
-//on load:
-//$( "#tabs" ).tabs(); 
-//document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
-function refreshAtM_S(m,s) { refreshAt(0, 0, 5);}
+//on load: 
+var onLoad = function () {
 
-var pullTask = function () {
-  pulledTask = localStorage.getItem(parent,textIWant)
+      $( "#9am" ).children("#text").html( nineAM );
+      $( "#10am" ).children("#text").html( tenAM );
+      $( "#11am" ).children("#text").html( elevenAM );
+      $( "#12pm" ).children("#text").html( twelvePM );
+      $( "#1pm" ).children("#text").html( onePM );
+      $( "#2pm" ).children("#text").html( twoPM );
+      $( "#3pm" ).children("#text").html( threePM );
+      $( "#4pm" ).children("#text").html( fourPM );
+      $( "#5pm" ).children("#text").html( fivePM );
+
 }
+onLoad()
 
+//save it! 
 $(".btn").on("click", function() {
   // get the parent's id attribute
     var parent = $(this).closest('div').attr('id')
@@ -37,23 +47,27 @@ $(".btn").on("click", function() {
     saveTask()
   });
   
-CurrentTime = moment().format("H") + "hate";
-function updateClock2() {
-  console.log(CurrentTime)
-}
-setInterval(updateClock2, 3000);
+
+//get time  
+CurrentTime = moment().format("H");
+
 //reload page every 30 seconds to ensure colors changing
 function updateClock() {
   CurrentTime = moment().format("H")+"love";
   console.log(CurrentTime)
   return(CurrentTime)
 }
-setInterval(updateClock, 1000);
+setInterval(updateClock, 300000);
+
+
+
+
+
 //switching classes
 // var currentHour = 2
 // var timeBar = 4
 // var switchTimeClass = function(){
-//     if (currentHour =< timeBar) {
+//     if (currentTime =< ) {
 //       $( ".future" ).switchClass( "future", "present", 1000 )
 //     }
 //     else if (time === currentHour) {

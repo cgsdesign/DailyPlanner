@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+<p id="demo">
+<p id="demo2"></p>
+</p>
+<p id="not-correct">
+<p id="demo2"></p>
+</p>
+<script>
+var test = ["demo","demo2"]
+var cars = ['"Saab", "Volvo"', "BMW"];
+var test2 = function(){
+    
+  for (let index = 0; index < test.length; index++) {
+      console.log(test[index])
+      document.getElementById(test[index],"demo2").innerHTML = cars;
+
+  }  
+}
+test2()
+</script>
+
+</body>
+</html>
