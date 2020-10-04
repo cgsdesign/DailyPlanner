@@ -60,12 +60,7 @@ function updateClock() {
 setInterval(updateClock, 300000);
 
 
-//testing zone
-function updateColors(){
-$( "#5pm" ).switchClass( "future", "past", 1000 )
-//       $( ".future" ).switchClass( "future", "present", 1000 )
-}
-//$( "#5pm" ).children("#text").html( fivePM );
+//color change as hours change
 
 var TimeID = ["#9am", "#10am", "#11am", "#12pm", "#1pm", "#2pm", "#3pm", "#4pm", "#5pm"]
 var hourCompCount= [9, 10, 11, 12, 13, 14, 15, 16, 17];
@@ -97,24 +92,3 @@ $( function() {
   };
 } );
 
-
-
-
-TimeID.forEach((classLove, index) => {
-  const num2 = hourCompCount[index];
-  console.log(classLove, num2);
-});
-//switching classes
-// var currentHour = 2
-// var timeBar = 4
-// var switchTimeClass = function(){
-//     if (currentTime =< ) {
-//       $( ".present" ).switchClass( "present", "future", 1000 )
-//     }
-//     else if (time === currentTime) {
-//       $( ".present" ).switchClass( "present", "past", 1000 );
-//     }
-//     else () {
-//       return
-//     }
-// }
