@@ -60,17 +60,19 @@ function updateClock() {
 $( function() {
   for (i=0;i < TimeID.length; i++) {
     CurrentTime = moment().format("H");//check tomorrow if needed
-    //console.log(CurrentTime)
+    console.log(CurrentTime)
 
-    if (hourCompCount[i] === CurrentTime){
+
+    if (hourCompCount[i] == CurrentTime){
       //console.log(TimeID[i] + hourCompCount[i] +"present")
+      //ask ta if need == not === becaue one is a number and one is a string
     $( TimeID[i] ).switchClass( "future", "present", 1000 );
     $( TimeID[i] ).switchClass( "past", "present", 1000 );
 
     }
 
     else if (hourCompCount[i] < CurrentTime){
-      //console.log(TimeID[i] + hourCompCount[i] +"past")
+      console.log(TimeID[i] + hourCompCount[i] +"past")
       $( TimeID[i] ).switchClass( "present", "past", 1000 );
       $( TimeID[i] ).switchClass( "future", "past", 1000 );
 
