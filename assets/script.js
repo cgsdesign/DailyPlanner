@@ -48,47 +48,42 @@ $(".btn").on("click", function() {
   });
   
 
-//get time  
-CurrentTime = moment().format("H");
-
-//reload page every 30 seconds to ensure colors changing
-function updateClock() {
-  CurrentTime = moment().format("H")+"love";
-  console.log(CurrentTime)
-  return(CurrentTime)
-}
-setInterval(updateClock, 300000);
+//get time (standard for records)  
+//CurrentTime = moment().format("H");
 
 
-//color change as hours change
-
+//color change as hours change- updates every 5 minutes
 var TimeID = ["#9am", "#10am", "#11am", "#12pm", "#1pm", "#2pm", "#3pm", "#4pm", "#5pm"]
 var hourCompCount= [9, 10, 11, 12, 13, 14, 15, 16, 17];
+function updateClock() {
+  //console.log("checking time")
 $( function() {
   for (i=0;i < TimeID.length; i++) {
-    CurrentTime = moment().format("H");
-    console.log(CurrentTime)
+    CurrentTime = moment().format("H");//check tomorrow if needed
+    //console.log(CurrentTime)
 
     if (hourCompCount[i] === CurrentTime){
-      console.log(TimeID[i] + hourCompCount[i] +"present")
+      //console.log(TimeID[i] + hourCompCount[i] +"present")
     $( TimeID[i] ).switchClass( "future", "present", 1000 );
     $( TimeID[i] ).switchClass( "past", "present", 1000 );
 
     }
 
     else if (hourCompCount[i] < CurrentTime){
-      console.log(TimeID[i] + hourCompCount[i] +"past")
+      //console.log(TimeID[i] + hourCompCount[i] +"past")
       $( TimeID[i] ).switchClass( "present", "past", 1000 );
       $( TimeID[i] ).switchClass( "future", "past", 1000 );
 
     }
 
     else{
-      console.log(TimeID[i] + hourCompCount[i] +"future")
+     // console.log(TimeID[i] + hourCompCount[i] +"future")
       $( TimeID[i] ).switchClass( "present", "future", 1000 );
       $( TimeID[i] ).switchClass( "past", "future", 1000 );
 
     }
   };
 } );
-
+}
+updateClock()
+setInterval(updateClock, 300000);//self updates colors every 5 minutes
