@@ -9,31 +9,53 @@
 
 //text for times
 var nineAM = localStorage.getItem("9am")
+var nine30AM = localStorage.getItem("9:30am")
 var tenAM = localStorage.getItem("10am")
+var ten30AM = localStorage.getItem("10:30am")
 var elevenAM = localStorage.getItem("11am")
+var eleven30AM = localStorage.getItem("11:30am")
 var twelvePM = localStorage.getItem("12pm")
+var twelve30AM = localStorage.getItem("12:30am")
 var onePM = localStorage.getItem("1pm")
+var one30PM = localStorage.getItem("1:30pm")
 var twoPM = localStorage.getItem("2pm")
+var two30PM = localStorage.getItem("2:30pm")
 var threePM = localStorage.getItem("3pm")
+var three30PM = localStorage.getItem("2:30pm")
 var fourPM = localStorage.getItem("4pm")
+var four30PM = localStorage.getItem("4:30pm")
 var fivePM = localStorage.getItem("5pm")
+var five30PM = localStorage.getItem("5:30pm")
+var notes = localStorage.getItem("Notes")
+
 
 //on load: 
-var onLoad = function () {
+$(document).ready(function () {
 //cound have writen the following section as :
 //$( "#9am #text").html(localStorage.getItem("9am"));
       $( "#9am" ).children("#text").html( nineAM );
+      $( "#930am" ).children("#text").html( nine30AM );
       $( "#10am" ).children("#text").html( tenAM );
+      $( "#1030am" ).children("#text").html( ten30AM );
       $( "#11am" ).children("#text").html( elevenAM );
+      $( "#930am" ).children("#text").html( eleven30AM );
       $( "#12pm" ).children("#text").html( twelvePM );
+      $( "#1230pm" ).children("#text").html( twelve30PM );
       $( "#1pm" ).children("#text").html( onePM );
+      $( "#130pm" ).children("#text").html( one30PM );
       $( "#2pm" ).children("#text").html( twoPM );
+      $( "#230pm" ).children("#text").html( two30PM );
       $( "#3pm" ).children("#text").html( threePM );
+      $( "330pm" ).children("#text").html( three30PM );
       $( "#4pm" ).children("#text").html( fourPM );
+      $( "#430pm" ).children("#text").html( four30PM );
       $( "#5pm" ).children("#text").html( fivePM );
+      $( "#530pm" ).children("#text").html( five30PM );
+      $( "Notes" ).children("#text").html( notes );
 
-}
-onLoad()
+
+})
+
 
 //save it! 
 $(".btn").on("click", function() {
@@ -55,15 +77,15 @@ $(".btn").on("click", function() {
 
 
 //color change as hours change- updates every 5 minutes
-var TimeID = ["#9am", "#10am", "#11am", "#12pm", "#1pm", "#2pm", "#3pm", "#4pm", "#5pm"]
-var hourCompCount= [9, 10, 11, 12, 13, 14, 15, 16, 17];
+var TimeID = ["#9am", "#930am", "#10am", "#1030am", "#11am", "#1130am", "#12pm", "#1230pm", "#1pm", "#130pm", "#2pm", "#230pm", "#3pm", "#330pm", "#4pm", "#430pm", "#5pm", "#530pm", "Notes"]
+var hourCompCount= [9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 17];
 function updateClock() {
   //console.log("checking time")
 $( function() {
   for (i=0;i < TimeID.length; i++) {
     CurrentTime = moment().format("H");//check tomorrow if needed
-    console.log(typeof CurrentTime)//lets me know if number or string
-    console.log(CurrentTime)
+    //console.log(typeof CurrentTime)//lets me know if number or string
+    //console.log(CurrentTime)//lets me know the value as written
 
     if (hourCompCount[i] == CurrentTime){
       //console.log(TimeID[i] + hourCompCount[i] +"present")
