@@ -15,7 +15,7 @@ var ten30AM = localStorage.getItem("10:30am")
 var elevenAM = localStorage.getItem("11am")
 var eleven30AM = localStorage.getItem("11:30am")
 var twelvePM = localStorage.getItem("12pm")
-var twelve30AM = localStorage.getItem("12:30am")
+var twelve30PM = localStorage.getItem("12:30am")
 var onePM = localStorage.getItem("1pm")
 var one30PM = localStorage.getItem("1:30pm")
 var twoPM = localStorage.getItem("2pm")
@@ -78,17 +78,19 @@ $(".btn").on("click", function() {
 
 //color change as hours change- updates every 5 minutes
 var TimeID = ["#9am", "#930am", "#10am", "#1030am", "#11am", "#1130am", "#12pm", "#1230pm", "#1pm", "#130pm", "#2pm", "#230pm", "#3pm", "#330pm", "#4pm", "#430pm", "#5pm", "#530pm", "Notes"]
-var hourCompCount= [9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 17];
+var hourCompCount= ["09:00:00", "09:30:00", "10:00:00", "10:30:00", "11:00:00", "11:30:00", "12:00:00", "12:30:00", "13:00:00", "13:30:00", "14:00:00", "14:30:00", "15:00:00", "15:30:00", "16:00:00", "16.30:00", "17:00:00", "17:30:00", "18:00:00"];
 function updateClock() {
   //console.log("checking time")
 $( function() {
   for (i=0;i < TimeID.length; i++) {
-    CurrentTime = moment().format("H");//check tomorrow if needed
+    CurrentTime = moment().format("hh:mm:ss");//check tomorrow if needed
     //console.log(typeof CurrentTime)//lets me know if number or string
-    //console.log(CurrentTime)//lets me know the value as written
+    console.log('what??')
+    console.log(CurrentTime)//lets me know the value as written
 
-    if (hourCompCount[i] == CurrentTime){
+    if (hourCompCount[i] < CurrentTime && hourCompCount[i+1] > CurrentTime){
       //console.log(TimeID[i] + hourCompCount[i] +"present")
+      console.log("first if" + hourCompCount[i+1])
     $( TimeID[i] ).switchClass( "future", "present", 1000 );
     $( TimeID[i] ).switchClass( "past", "present", 1000 );
 
