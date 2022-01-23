@@ -85,19 +85,17 @@ $( function() {
   for (i=0;i < TimeID.length; i++) {
     CurrentTime = moment().format("HH:mm:ss");//check tomorrow if needed
     //console.log(typeof CurrentTime)//lets me know if number or string
-    console.log('what??')
-    console.log(CurrentTime)//lets me know the value as written
+    //console.log(CurrentTime)//lets me know the value as written
 
     if (hourCompCount[i] < CurrentTime && hourCompCount[i+1] > CurrentTime){
       //console.log(TimeID[i] + hourCompCount[i] +"present")
-      console.log("first if" + hourCompCount[i+1])
     $( TimeID[i] ).switchClass( "future", "present", 1000 );
     $( TimeID[i] ).switchClass( "past", "present", 1000 );
 
     }
 
     else if (hourCompCount[i] < CurrentTime){
-      console.log(TimeID[i] + hourCompCount[i] + CurrentTime +"past")
+      //console.log(TimeID[i] + hourCompCount[i] + CurrentTime +"past")
       $( TimeID[i] ).switchClass( "present", "past", 1000 );
       $( TimeID[i] ).switchClass( "future", "past", 1000 );
 
