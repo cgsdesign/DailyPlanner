@@ -83,7 +83,7 @@ function updateClock() {
   //console.log("checking time")
 $( function() {
   for (i=0;i < TimeID.length; i++) {
-    CurrentTime = moment().format("hh:mm:ss");//check tomorrow if needed
+    CurrentTime = moment().format("HH:mm:ss");//check tomorrow if needed
     //console.log(typeof CurrentTime)//lets me know if number or string
     console.log('what??')
     console.log(CurrentTime)//lets me know the value as written
@@ -97,7 +97,7 @@ $( function() {
     }
 
     else if (hourCompCount[i] < CurrentTime){
-      console.log(TimeID[i] + hourCompCount[i] +"past")
+      console.log(TimeID[i] + hourCompCount[i] + CurrentTime +"past")
       $( TimeID[i] ).switchClass( "present", "past", 1000 );
       $( TimeID[i] ).switchClass( "future", "past", 1000 );
 
@@ -105,6 +105,7 @@ $( function() {
 
     else{
      // console.log(TimeID[i] + hourCompCount[i] +"future")
+     console.log(TimeID[i] + hourCompCount[i] +"future")
       $( TimeID[i] ).switchClass( "present", "future", 1000 );
       $( TimeID[i] ).switchClass( "past", "future", 1000 );
 
