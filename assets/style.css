@@ -1,7 +1,25 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 1;
+}
+
+.headerSection {
+  text-align:center;
+  padding:30px;
+  border-bottom: 5px black solid;
+  width:100%;
+  margin-bottom:10px;
+}
+.columnHalf {
+  flex:1;
+  padding:10px 20px;
+  display: flex;
+  flex-direction:column;
+}
+.mainBody {
+  display: flex;
+  flex-direction: row;
 }
 
 textarea{
@@ -30,6 +48,7 @@ textarea{
 
 .description{
   white-space: pre-wrap;
+  flex:4;
 }
 
 .time-block{
@@ -39,17 +58,23 @@ textarea{
 
 .row {
   white-space: pre-wrap;
-  height: 80px;
-  border-top: 1px solid white;;
+  height: 60px;
+  border-top: 1px solid white;
   
+}
+.notes {
+  height: 120px;
+  margin-bottom:50px;
 }
 
 .hour {
+  flex:1;
   background-color: #ffffff;
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 500;
   color: #000000;
   border-top: 1px dashed #000000;
+  min-width:50px;
 }
 
 .past {
@@ -69,20 +94,21 @@ textarea{
 
 .saveBtn {
   border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   background-color: black;
   color: white;
+  flex:1;
 }
 
 .saveBtn i:hover {
-  font-size: 20px;
+  font-size: 10px;
   transition: all .3s ease-in-out;
 }
 
 @media screen and (max-width: 540px) {
 .row {
-  height: 200px;
+  height: 50px;
 }
 
 .saveBtn {
